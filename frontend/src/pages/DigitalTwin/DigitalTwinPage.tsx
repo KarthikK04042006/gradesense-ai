@@ -81,7 +81,7 @@ export const DigitalTwinPage: React.FC = () => {
               <Wind className="w-3.5 h-3.5 text-cyan-400" />
             </div>
             <div className="text-xl font-bold text-cyan-400">
-              {stockFlow.toLocaleString()} <span className="text-xs text-slate-400">L/min</span>
+              {Math.round(stockFlow).toLocaleString()} <span className="text-xs text-slate-400">L/min</span>
             </div>
             <div className="text-[10px] text-slate-500 pt-1">Headbox Feed Slurry Rate</div>
           </div>
@@ -93,7 +93,7 @@ export const DigitalTwinPage: React.FC = () => {
               <Flame className="w-3.5 h-3.5 text-red-400" />
             </div>
             <div className="text-xl font-bold text-red-400">
-              {steamPressure} <span className="text-xs text-slate-400">bar</span>
+              {steamPressure.toFixed(2)} <span className="text-xs text-slate-400">bar</span>
             </div>
             <div className="text-[10px] text-slate-500 pt-1">Dryer Group 1-4 Supply</div>
           </div>
@@ -105,7 +105,7 @@ export const DigitalTwinPage: React.FC = () => {
               <Activity className="w-3.5 h-3.5 text-emerald-400" />
             </div>
             <div className="text-xl font-bold text-emerald-400">
-              {machineSpeed} <span className="text-xs text-slate-400">m/min</span>
+              {Math.round(machineSpeed)} <span className="text-xs text-slate-400">m/min</span>
             </div>
             <div className="text-[10px] text-slate-500 pt-1">Fourdrinier Wire Drag</div>
           </div>
@@ -116,7 +116,7 @@ export const DigitalTwinPage: React.FC = () => {
               <span>MOISTURE</span>
               <Droplets className="w-3.5 h-3.5 text-amber-400" />
             </div>
-            <div className="text-xl font-bold text-amber-400">{moisture}%</div>
+            <div className="text-xl font-bold text-amber-400">{moisture.toFixed(1)}%</div>
             <div className="text-[10px] text-slate-500 pt-1">Scanner Sensor Readout</div>
           </div>
 
@@ -127,7 +127,7 @@ export const DigitalTwinPage: React.FC = () => {
               <Gauge className="w-3.5 h-3.5 text-cyan-400" />
             </div>
             <div className="text-xl font-bold text-slate-100">
-              {basisWeight} <span className="text-xs text-slate-400">g/m²</span>
+              {basisWeight.toFixed(1)} <span className="text-xs text-slate-400">g/m²</span>
             </div>
             <div className="text-[10px] text-slate-500 pt-1">Target: {targetRecipe.basisWeightTarget} g/m²</div>
           </div>
@@ -187,7 +187,7 @@ export const DigitalTwinPage: React.FC = () => {
               </div>
               <div className="text-[10px] font-mono text-cyan-400 mt-2 font-semibold">Stock Headbox</div>
               <div className="absolute -top-6 bg-slate-900 border border-cyan-500 px-2 py-0.5 rounded text-[9px] font-mono text-cyan-300 shadow">
-                Sensor S1: {stockFlow} L/min
+                Sensor S1: {Math.round(stockFlow)} L/min
               </div>
             </div>
 
@@ -262,7 +262,7 @@ export const DigitalTwinPage: React.FC = () => {
                 </motion.div>
               </div>
 
-              <div className="text-[10px] font-mono text-emerald-400 mt-2 font-semibold">Wire Belt ({machineSpeed} m/min)</div>
+              <div className="text-[10px] font-mono text-emerald-400 mt-2 font-semibold">Wire Belt ({Math.round(machineSpeed)} m/min)</div>
               <div className="absolute -top-6 bg-slate-900 border border-emerald-500 px-2 py-0.5 rounded text-[9px] font-mono text-emerald-300 shadow">
                 Sensor S2: Wire Drag
               </div>
@@ -300,9 +300,9 @@ export const DigitalTwinPage: React.FC = () => {
                 </motion.div>
               </div>
 
-              <div className="text-[10px] font-mono text-red-400 mt-2 font-semibold">Press & Steam ({steamPressure} bar)</div>
+              <div className="text-[10px] font-mono text-red-400 mt-2 font-semibold">Press & Steam ({steamPressure.toFixed(2)} bar)</div>
               <div className="absolute -top-6 bg-slate-900 border border-red-500 px-2 py-0.5 rounded text-[9px] font-mono text-red-300 shadow">
-                Sensor S3: {steamPressure} bar
+                Sensor S3: {steamPressure.toFixed(2)} bar
               </div>
             </div>
 
@@ -333,7 +333,7 @@ export const DigitalTwinPage: React.FC = () => {
 
               <div className="text-[10px] font-mono text-amber-400 mt-2 font-semibold">Dryer Group 1-4</div>
               <div className="absolute -top-6 bg-slate-900 border border-amber-500 px-2 py-0.5 rounded text-[9px] font-mono text-amber-300 shadow">
-                Sensor S4: {moisture}% Moisture
+                Sensor S4: {moisture.toFixed(1)}% Moisture
               </div>
             </div>
 
@@ -372,7 +372,7 @@ export const DigitalTwinPage: React.FC = () => {
 
               <div className="text-[10px] font-mono text-slate-200 mt-2 font-semibold">Paper Roll Winder</div>
               <div className="absolute -top-6 bg-slate-900 border border-slate-400 px-2 py-0.5 rounded text-[9px] font-mono text-slate-200 shadow">
-                Sensor S5: {basisWeight} g/m²
+                Sensor S5: {basisWeight.toFixed(1)} g/m²
               </div>
             </div>
 
