@@ -1,0 +1,29 @@
+GradeSense AI – Honeywell Hackathon Submission
+
+Project Title:
+GradeSense AI – Autonomous Industrial Paper Grade Transition Optimizer
+
+Submission Resources
+
+Presentation (Canva):
+https://canva.link/rq3diajp0oed7tc
+
+Presentation (PDF):
+https://drive.google.com/file/d/1FTyXxT3ykmIVMOg0tH-2MnpjuF5ZalP9/view?usp=drive_link
+
+Project Report:
+https://drive.google.com/file/d/1emBx0A4vpZYUIloV6RP4OD9q-ecnWdAl/view?usp=drive_link
+
+Source Code (GitHub Repository):
+https://github.com/KarthikK04042006/gradesense-ai
+
+Live Demo:
+https://gradesense-ai-b1h9.vercel.app/
+
+Project Overview
+
+GradeSense AI is an AI-powered industrial decision support system developed to optimize paper grade transitions in manufacturing environments. The solution leverages Machine Learning, Explainable AI (SHAP), a Digital Twin, Historical Similarity Analysis, and an AI Copilot to assist operators in making informed decisions, minimizing production scrap, reducing transition time, and improving overall operational efficiency.
+
+Key Technologies: React, TypeScript, FastAPI, Python, XGBoost, LSTM, SHAP, SQLite, Tailwind CSS, Plotly.
+
+Thank you for your time and consideration. We appreciate the opportunity to participate in the Honeywell Hackathon.
