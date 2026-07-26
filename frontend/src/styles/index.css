@@ -15,8 +15,8 @@
   --color-surface:        rgba(15, 20, 33, 0.72);
   --color-surface-2:      rgba(15, 20, 33, 0.60);
   --color-surface-solid:  #0d1120;
-  --color-border:         rgba(51, 65, 85, 0.55);
-  --color-border-hover:   rgba(71, 85, 105, 0.75);
+  --color-border:         rgba(51, 65, 85, 0.25);
+  --color-border-hover:   rgba(71, 85, 105, 0.45);
   --color-text-primary:   #e2e8f0;
   --color-text-secondary: #94a3b8;
   --color-text-muted:     #475569;

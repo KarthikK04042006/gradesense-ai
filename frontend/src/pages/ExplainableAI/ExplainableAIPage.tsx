@@ -197,7 +197,7 @@ export const ExplainableAIPage: React.FC = () => {
         {/* 6 Sliders Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4 font-mono text-xs">
           {/* Slider 1: Steam Pressure */}
-          <div className="space-y-1.5 p-3 rounded-lg bg-slate-950 border border-slate-800">
+          <div className="space-y-1.5 p-3 rounded-lg bg-slate-900/40 border border-slate-800/30">
             <div className="flex justify-between">
               <span className="text-slate-300 font-medium flex items-center gap-1.5">
                 <Flame className="w-3.5 h-3.5 text-red-400" />
@@ -217,7 +217,7 @@ export const ExplainableAIPage: React.FC = () => {
           </div>
 
           {/* Slider 2: Machine Speed */}
-          <div className="space-y-1.5 p-3 rounded-lg bg-slate-950 border border-slate-800">
+          <div className="space-y-1.5 p-3 rounded-lg bg-slate-900/40 border border-slate-800/30">
             <div className="flex justify-between">
               <span className="text-slate-300 font-medium flex items-center gap-1.5">
                 <Activity className="w-3.5 h-3.5 text-emerald-400" />
@@ -237,7 +237,7 @@ export const ExplainableAIPage: React.FC = () => {
           </div>
 
           {/* Slider 3: Stock Flow */}
-          <div className="space-y-1.5 p-3 rounded-lg bg-slate-950 border border-slate-800">
+          <div className="space-y-1.5 p-3 rounded-lg bg-slate-900/40 border border-slate-800/30">
             <div className="flex justify-between">
               <span className="text-slate-300 font-medium flex items-center gap-1.5">
                 <Wind className="w-3.5 h-3.5 text-cyan-400" />
@@ -257,7 +257,7 @@ export const ExplainableAIPage: React.FC = () => {
           </div>
 
           {/* Slider 4: Moisture */}
-          <div className="space-y-1.5 p-3 rounded-lg bg-slate-950 border border-slate-800">
+          <div className="space-y-1.5 p-3 rounded-lg bg-slate-900/40 border border-slate-800/30">
             <div className="flex justify-between">
               <span className="text-slate-300 font-medium flex items-center gap-1.5">
                 <Droplets className="w-3.5 h-3.5 text-amber-400" />
@@ -279,7 +279,7 @@ export const ExplainableAIPage: React.FC = () => {
           </div>
 
           {/* Slider 5: Ash Filler */}
-          <div className="space-y-1.5 p-3 rounded-lg bg-slate-950 border border-slate-800">
+          <div className="space-y-1.5 p-3 rounded-lg bg-slate-900/40 border border-slate-800/30">
             <div className="flex justify-between">
               <span className="text-slate-300 font-medium flex items-center gap-1.5">
                 <Layers className="w-3.5 h-3.5 text-cyan-300" />
@@ -301,7 +301,7 @@ export const ExplainableAIPage: React.FC = () => {
           </div>
 
           {/* Slider 6: Caliper */}
-          <div className="space-y-1.5 p-3 rounded-lg bg-slate-950 border border-slate-800">
+          <div className="space-y-1.5 p-3 rounded-lg bg-slate-900/40 border border-slate-800/30">
             <div className="flex justify-between">
               <span className="text-slate-300 font-medium flex items-center gap-1.5">
                 <Gauge className="w-3.5 h-3.5 text-slate-100" />
@@ -337,7 +337,7 @@ export const ExplainableAIPage: React.FC = () => {
                   layout
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="p-3.5 rounded-xl bg-slate-950/90 border border-slate-800/80 space-y-2.5"
+                  className="p-3.5 rounded-xl bg-slate-900/30 border border-slate-800/30 space-y-2.5"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <div className="flex items-center gap-2">
