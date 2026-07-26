@@ -35,6 +35,7 @@ const PageFallback: React.FC = () => (
   </div>
 );
 
+import { Footer } from './components/common/Footer';
 import { HowAIWorksModal } from './components/common/HowAIWorksModal';
 
 export const MainLayout: React.FC = () => {
@@ -112,7 +113,7 @@ export const MainLayout: React.FC = () => {
         <main
           role="main"
           aria-label="GradeSense AI Workspace"
-          className="flex-1 overflow-y-auto p-5 xl:p-6"
+          className="flex-1 overflow-y-auto p-5 xl:p-6 flex flex-col justify-between"
           style={{ background: 'radial-gradient(ellipse 80% 40% at 50% 0%, rgba(30,41,59,0.25) 0%, transparent 70%), #080c14' }}
         >
           <Suspense fallback={<PageFallback />}>
@@ -128,6 +129,9 @@ export const MainLayout: React.FC = () => {
               </motion.div>
             </AnimatePresence>
           </Suspense>
+
+          {/* Enterprise Footer */}
+          <Footer setActiveTab={setActiveTab} />
         </main>
       </div>
 
