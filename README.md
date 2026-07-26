@@ -10,7 +10,7 @@
 ![Honeywell](https://img.shields.io/badge/DCS_Integration-Honeywell_Experion®_PKS-E51A24)
 ![Deployment](https://img.shields.io/badge/Live_Demo-Vercel_%7C_Render-000000?logo=vercel)
 
-[🌐 Live Web Dashboard](https://gradesense-ai-b1h9.vercel.app) • [⚡ Interactive API Docs](https://gradesense-backend-8n9r.onrender.com/docs) • [📄 Submission Details](./HACKATHON_SUBMISSION.md)
+[🌐 Live Web Dashboard](https://gradesense-ai-b1h9.vercel.app) • [⚡ Interactive API Docs](https://gradesense-backend-8n9r.onrender.com/docs)
 
 </div>
 
