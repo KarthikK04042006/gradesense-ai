@@ -136,7 +136,10 @@
     background: var(--color-input-bg);
     border: 1px solid var(--color-border);
     border-radius: 10px;
-    padding: 0.5rem 0.875rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
     font-size: 0.8125rem;
     color: var(--color-text-primary);
     font-family: ui-monospace, 'SF Mono', 'JetBrains Mono', monospace;

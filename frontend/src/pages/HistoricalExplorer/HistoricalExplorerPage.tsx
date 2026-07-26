@@ -206,13 +206,13 @@ export const HistoricalExplorerPage: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           {/* Search Box */}
           <div className="relative flex-1 max-w-md">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none z-10" />
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search transition ID or grades (e.g. TR-101, KRAFT-42)..."
-              className="w-full glass-input pl-9 text-xs"
+              className="w-full glass-input !pl-9 text-xs"
             />
           </div>
 
