@@ -262,56 +262,57 @@ export const HistoricalExplorerPage: React.FC = () => {
         </div>
       </GlassCard>
 
-      {/* Historical Cases Timeline & Expandable List */}
-      <div className="space-y-4">
-        {filteredCases.map((item, idx) => {
-          const isExpanded = expandedId === item.transitionId;
+      {/* Historical Cases Timeline & Expandable List (Single Unified Container) */}
+      <GlassCard className="p-0 overflow-hidden border-slate-800/60 bg-slate-900/60">
+        <div className="divide-y divide-slate-800/40">
+          {filteredCases.map((item, idx) => {
+            const isExpanded = expandedId === item.transitionId;
 
-          return (
-            <GlassCard key={item.transitionId} className="p-0 overflow-hidden border-slate-800">
-              <div
-                onClick={() => setExpandedId(isExpanded ? null : item.transitionId)}
-                className="p-4 flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer hover:bg-slate-800/40 transition-colors"
-              >
-                {/* Left Side: ID & Grade Pair */}
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center font-mono shrink-0">
-                    <span className="text-[9px] text-slate-500 font-bold">CASE</span>
-                    <span className="text-xs font-bold text-cyan-400">{item.transitionId}</span>
+            return (
+              <div key={item.transitionId} className="transition-colors">
+                <div
+                  onClick={() => setExpandedId(isExpanded ? null : item.transitionId)}
+                  className="p-4 flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer hover:bg-slate-800/30 transition-colors"
+                >
+                  {/* Left Side: ID & Grade Pair */}
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-slate-900/60 border border-slate-800/40 flex flex-col items-center justify-center font-mono shrink-0">
+                      <span className="text-[8px] text-slate-500 font-bold">CASE</span>
+                      <span className="text-xs font-bold text-cyan-400">{item.transitionId}</span>
+                    </div>
+
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="font-bold text-sm text-slate-100 font-mono">{item.fromGrade}</span>
+                        <ArrowRight className="w-3.5 h-3.5 text-slate-500" />
+                        <span className="font-bold text-sm text-slate-100 font-mono">{item.toGrade}</span>
+                      </div>
+                      <div className="flex items-center gap-3 text-xs text-slate-400 font-mono mt-1">
+                        <span>Vector Match: <strong className="text-emerald-400">{item.similarityScore}%</strong></span>
+                        <span>•</span>
+                        <span>Duration: <strong className="text-slate-200">{item.recoveryTimeMin} min</strong></span>
+                        <span>•</span>
+                        <span>Cost: <strong className="text-slate-200">${item.costUsd.toLocaleString()}</strong></span>
+                      </div>
+                    </div>
                   </div>
 
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="font-bold text-sm text-slate-100 font-mono">{item.fromGrade}</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-slate-500" />
-                      <span className="font-bold text-sm text-slate-100 font-mono">{item.toGrade}</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-xs text-slate-400 font-mono mt-1">
-                      <span>Vector Match: <strong className="text-emerald-400">{item.similarityScore}%</strong></span>
-                      <span>•</span>
-                      <span>Duration: <strong className="text-slate-200">{item.recoveryTimeMin} min</strong></span>
-                      <span>•</span>
-                      <span>Cost: <strong className="text-slate-200">${item.costUsd.toLocaleString()}</strong></span>
-                    </div>
+                  {/* Right Side: Status Badge & Accordion Toggle */}
+                  <div className="flex items-center gap-4 shrink-0 justify-between md:justify-end">
+                    {getResultBadge(item.finalResult)}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCompareCase(item);
+                      }}
+                      className="px-2.5 py-1 rounded text-xs font-mono bg-slate-900/60 hover:bg-slate-800/60 border border-slate-800/40 text-slate-300 flex items-center gap-1 cursor-pointer"
+                    >
+                      <Maximize2 className="w-3 h-3 text-amber-400" />
+                      <span>Compare</span>
+                    </button>
+                    {isExpanded ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
                   </div>
                 </div>
-
-                {/* Right Side: Status Badge & Accordion Toggle */}
-                <div className="flex items-center gap-4 shrink-0 justify-between md:justify-end">
-                  {getResultBadge(item.finalResult)}
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setCompareCase(item);
-                    }}
-                    className="px-2.5 py-1 rounded text-xs font-mono bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 flex items-center gap-1"
-                  >
-                    <Maximize2 className="w-3 h-3 text-amber-400" />
-                    <span>Compare</span>
-                  </button>
-                  {isExpanded ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
-                </div>
-              </div>
 
               {/* Expandable Details Panel */}
               <AnimatePresence>
@@ -365,10 +366,11 @@ export const HistoricalExplorerPage: React.FC = () => {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </GlassCard>
+            </div>
           );
         })}
-      </div>
+        </div>
+      </GlassCard>
 
       {/* Side-by-Side Comparison Modal */}
       <AnimatePresence>

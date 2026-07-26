@@ -285,7 +285,7 @@ export const AICopilotPage: React.FC = () => {
                 <button
                   key={i}
                   onClick={() => handleSend(prompt)}
-                  className="w-full text-left p-3 rounded-lg bg-slate-950/80 border border-slate-800 hover:border-red-500/50 text-slate-300 hover:text-white transition-all flex items-center justify-between group cursor-pointer"
+                  className="w-full text-left p-3 rounded-lg bg-slate-900/40 border border-slate-800/30 hover:border-red-500/40 text-slate-300 hover:text-white transition-all flex items-center justify-between group cursor-pointer"
                 >
                   <span className="line-clamp-2">{prompt}</span>
                   <ArrowRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-red-400 group-hover:translate-x-0.5 transition-all shrink-0 ml-2" />
@@ -295,16 +295,16 @@ export const AICopilotPage: React.FC = () => {
           </GlassCard>
 
           <GlassCard title="Active Knowledge Base" subtitle="Model & Physics Context">
-            <div className="space-y-2 text-xs font-mono">
-              <div className="p-2 rounded bg-slate-950 border border-slate-800 flex justify-between">
+            <div className="space-y-2 text-xs font-mono divide-y divide-slate-800/30">
+              <div className="py-2 flex justify-between">
                 <span className="text-slate-400">DCS Link</span>
                 <span className="text-emerald-400 font-bold">Experion PKS</span>
               </div>
-              <div className="p-2 rounded bg-slate-950 border border-slate-800 flex justify-between">
+              <div className="py-2 flex justify-between">
                 <span className="text-slate-400">Indexed Cases</span>
                 <span className="text-cyan-400 font-bold">1,420 Runs</span>
               </div>
-              <div className="p-2 rounded bg-slate-950 border border-slate-800 flex justify-between">
+              <div className="py-2 flex justify-between">
                 <span className="text-slate-400">MPC Model</span>
                 <span className="text-amber-400 font-bold">GradeSense v2.4</span>
               </div>

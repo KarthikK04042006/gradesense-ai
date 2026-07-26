@@ -71,73 +71,75 @@ export const DigitalTwinPage: React.FC = () => {
         </div>
       </GlassCard>
 
-      {/* Live Value Sensor Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 font-mono">
-        {/* Stock Flow */}
-        <GlassCard className={`p-4 border-slate-800 ${headboxRisk ? 'border-amber-500/80 bg-amber-950/20' : ''}`}>
-          <div className="flex items-center justify-between text-xs text-slate-400">
-            <span>STOCK FLOW</span>
-            <Wind className="w-4 h-4 text-cyan-400" />
+      {/* Real-time Telemetry Metrics Row (Single Unified Stat Strip Container) */}
+      <GlassCard className="p-0 border-slate-800/60 bg-slate-900/60 overflow-hidden font-mono">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y sm:divide-y-0 lg:divide-x divide-slate-800/50">
+          {/* Stock Flow */}
+          <div className="p-4 space-y-1">
+            <div className="flex items-center justify-between text-xs text-slate-400">
+              <span>STOCK FLOW</span>
+              <Wind className="w-3.5 h-3.5 text-cyan-400" />
+            </div>
+            <div className="text-xl font-bold text-cyan-400">
+              {stockFlow.toLocaleString()} <span className="text-xs text-slate-400">L/min</span>
+            </div>
+            <div className="text-[10px] text-slate-500 pt-1">Headbox Feed Slurry Rate</div>
           </div>
-          <div className="mt-2 text-xl font-bold text-cyan-400">
-            {stockFlow.toLocaleString()} <span className="text-xs text-slate-400">L/min</span>
-          </div>
-          <div className="text-[10px] text-slate-500 mt-1">Headbox Feed Slurry Rate</div>
-        </GlassCard>
 
-        {/* Steam Pressure */}
-        <GlassCard className={`p-4 border-slate-800 ${pressRisk ? 'border-red-500/80 bg-red-950/20' : ''}`}>
-          <div className="flex items-center justify-between text-xs text-slate-400">
-            <span>STEAM PRESSURE</span>
-            <Flame className="w-4 h-4 text-red-400" />
+          {/* Steam Pressure */}
+          <div className="p-4 space-y-1">
+            <div className="flex items-center justify-between text-xs text-slate-400">
+              <span>STEAM PRESSURE</span>
+              <Flame className="w-3.5 h-3.5 text-red-400" />
+            </div>
+            <div className="text-xl font-bold text-red-400">
+              {steamPressure} <span className="text-xs text-slate-400">bar</span>
+            </div>
+            <div className="text-[10px] text-slate-500 pt-1">Dryer Group 1-4 Supply</div>
           </div>
-          <div className="mt-2 text-xl font-bold text-red-400">
-            {steamPressure} <span className="text-xs text-slate-400">bar</span>
-          </div>
-          <div className="text-[10px] text-slate-500 mt-1">Dryer Group 1-4 Supply</div>
-        </GlassCard>
 
-        {/* Machine Speed */}
-        <GlassCard className="p-4 border-slate-800">
-          <div className="flex items-center justify-between text-xs text-slate-400">
-            <span>MACHINE SPEED</span>
-            <Activity className="w-4 h-4 text-emerald-400" />
+          {/* Machine Speed */}
+          <div className="p-4 space-y-1">
+            <div className="flex items-center justify-between text-xs text-slate-400">
+              <span>MACHINE SPEED</span>
+              <Activity className="w-3.5 h-3.5 text-emerald-400" />
+            </div>
+            <div className="text-xl font-bold text-emerald-400">
+              {machineSpeed} <span className="text-xs text-slate-400">m/min</span>
+            </div>
+            <div className="text-[10px] text-slate-500 pt-1">Fourdrinier Wire Drag</div>
           </div>
-          <div className="mt-2 text-xl font-bold text-emerald-400">
-            {machineSpeed} <span className="text-xs text-slate-400">m/min</span>
-          </div>
-          <div className="text-[10px] text-slate-500 mt-1">Fourdrinier Wire Drag</div>
-        </GlassCard>
 
-        {/* Moisture */}
-        <GlassCard className={`p-4 border-slate-800 ${dryerRisk ? 'border-amber-500/80 bg-amber-950/20' : ''}`}>
-          <div className="flex items-center justify-between text-xs text-slate-400">
-            <span>MOISTURE</span>
-            <Droplets className="w-4 h-4 text-amber-400" />
+          {/* Moisture */}
+          <div className="p-4 space-y-1">
+            <div className="flex items-center justify-between text-xs text-slate-400">
+              <span>MOISTURE</span>
+              <Droplets className="w-3.5 h-3.5 text-amber-400" />
+            </div>
+            <div className="text-xl font-bold text-amber-400">{moisture}%</div>
+            <div className="text-[10px] text-slate-500 pt-1">Scanner Sensor Readout</div>
           </div>
-          <div className="mt-2 text-xl font-bold text-amber-400">{moisture}%</div>
-          <div className="text-[10px] text-slate-500 mt-1">Scanner Sensor Readout</div>
-        </GlassCard>
 
-        {/* Basis Weight */}
-        <GlassCard className="p-4 border-slate-800">
-          <div className="flex items-center justify-between text-xs text-slate-400">
-            <span>BASIS WEIGHT</span>
-            <Gauge className="w-4 h-4 text-cyan-400" />
+          {/* Basis Weight */}
+          <div className="p-4 space-y-1">
+            <div className="flex items-center justify-between text-xs text-slate-400">
+              <span>BASIS WEIGHT</span>
+              <Gauge className="w-3.5 h-3.5 text-cyan-400" />
+            </div>
+            <div className="text-xl font-bold text-slate-100">
+              {basisWeight} <span className="text-xs text-slate-400">g/m²</span>
+            </div>
+            <div className="text-[10px] text-slate-500 pt-1">Target: {targetRecipe.basisWeightTarget} g/m²</div>
           </div>
-          <div className="mt-2 text-xl font-bold text-slate-100">
-            {basisWeight} <span className="text-xs text-slate-400">g/m²</span>
-          </div>
-          <div className="text-[10px] text-slate-500 mt-1">Target: {targetRecipe.basisWeightTarget} g/m²</div>
-        </GlassCard>
-      </div>
+        </div>
+      </GlassCard>
 
       {/* Main Digital Twin Machine Graphic Box */}
       <GlassCard
         title="Paper Machine PM-4 Animated Digital Twin Schematic"
         subtitle="Live animated pulp slurry stream, dryer steam clouds, moving paper sheet ribbon, and risk highlights"
       >
-        <div className="relative w-full overflow-x-auto p-4 bg-slate-950/90 rounded-xl border border-slate-800 min-h-[460px] flex flex-col justify-between">
+        <div className="relative w-full overflow-x-auto p-4 bg-slate-900/40 rounded-xl border border-slate-800/40 min-h-[460px] flex flex-col justify-between">
           
           {/* Section Titles Legend Overlay */}
           <div className="grid grid-cols-5 gap-2 text-center text-[11px] font-mono font-bold text-slate-400 border-b border-slate-800/80 pb-2 mb-4">

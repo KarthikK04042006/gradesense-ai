@@ -139,79 +139,73 @@ export const AIPredictionPage: React.FC = () => {
         </div>
       </GlassCard>
 
-      {/* Required Display Metrics Grid (6 Items) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 font-mono">
-        {/* 1. Current Risk */}
-        <GlassCard
-          className={`p-4 ${
-            metrics.currentRisk > 60
-              ? 'industrial-glow-red border-red-500/50 bg-red-950/20'
-              : metrics.currentRisk > 30
-              ? 'industrial-glow-amber border-amber-500/50 bg-amber-950/20'
-              : 'industrial-glow-cyan border-emerald-500/50 bg-emerald-950/20'
-          }`}
-        >
-          <div className="text-xs text-slate-400">CURRENT RISK</div>
-          <div className="mt-2 text-2xl font-bold text-slate-100">
-            {metrics.currentRisk}%
+      {/* Required Display Metrics Grid (Single Unified Stat Strip Container) */}
+      <GlassCard className="p-0 border-slate-800/60 bg-slate-900/60 overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 divide-y sm:divide-y-0 lg:divide-x divide-slate-800/50 font-mono">
+          {/* 1. Current Risk */}
+          <div className="p-4 space-y-1">
+            <div className="text-xs text-slate-400">CURRENT RISK</div>
+            <div className="text-xl font-bold text-slate-100">
+              {metrics.currentRisk}%
+            </div>
+            <div className="flex items-center justify-between text-[10px] pt-1">
+              <span className="text-slate-500">Threshold: 45%</span>
+              <span
+                className={`font-semibold ${
+                  metrics.currentRisk > 60 ? 'text-red-400' : metrics.currentRisk > 30 ? 'text-amber-400' : 'text-emerald-400'
+                }`}
+              >
+                {metrics.currentRiskLabel}
+              </span>
+            </div>
           </div>
-          <div className="mt-1 flex items-center justify-between text-[10px]">
-            <span className="text-slate-500">Threshold: 45%</span>
-            <span
-              className={`font-bold ${
-                metrics.currentRisk > 60 ? 'text-red-400' : metrics.currentRisk > 30 ? 'text-amber-400' : 'text-emerald-400'
-              }`}
-            >
-              {metrics.currentRiskLabel}
-            </span>
-          </div>
-        </GlassCard>
 
-        {/* 2. Off-Spec Probability */}
-        <GlassCard className="p-4 border-slate-800">
-          <div className="text-xs text-slate-400">OFF-SPEC PROBABILITY</div>
-          <div className="mt-2 text-2xl font-bold text-amber-400">
-            {metrics.offSpecProbability}%
+          {/* 2. Off-Spec Probability */}
+          <div className="p-4 space-y-1">
+            <div className="text-xs text-slate-400">OFF-SPEC PROBABILITY</div>
+            <div className="text-xl font-bold text-amber-400">
+              {metrics.offSpecProbability}%
+            </div>
+            <div className="text-[10px] text-slate-500 pt-1">Scrap Risk Estimate</div>
           </div>
-          <div className="mt-1 text-[10px] text-slate-500">Scrap Risk Estimate</div>
-        </GlassCard>
 
-        {/* 3. Predicted Basis Weight */}
-        <GlassCard className="p-4 border-slate-800">
-          <div className="text-xs text-slate-400">PREDICTED BASIS WEIGHT</div>
-          <div className="mt-2 text-2xl font-bold text-cyan-400">
-            {metrics.predictedBasisWeight} <span className="text-xs text-slate-400 font-normal">g/m²</span>
+          {/* 3. Predicted Basis Weight */}
+          <div className="p-4 space-y-1">
+            <div className="text-xs text-slate-400">PREDICTED BASIS WEIGHT</div>
+            <div className="text-xl font-bold text-cyan-400">
+              {metrics.predictedBasisWeight} <span className="text-xs text-slate-400 font-normal">g/m²</span>
+            </div>
+            <div className="text-[10px] text-slate-500 pt-1">Target: 185.0 g/m²</div>
           </div>
-          <div className="mt-1 text-[10px] text-slate-500">Target: 185.0 g/m²</div>
-        </GlassCard>
 
-        {/* 4. Predicted Moisture */}
-        <GlassCard className="p-4 border-slate-800">
-          <div className="text-xs text-slate-400">PREDICTED MOISTURE</div>
-          <div className="mt-2 text-2xl font-bold text-amber-400">
-            {metrics.predictedMoisture}%
+          {/* 4. Predicted Moisture */}
+          <div className="p-4 space-y-1">
+            <div className="text-xs text-slate-400">PREDICTED MOISTURE</div>
+            <div className="text-xl font-bold text-amber-400">
+              {metrics.predictedMoisture}%
+            </div>
+            <div className="text-[10px] text-slate-500 pt-1">Target: 7.0%</div>
           </div>
-          <div className="mt-1 text-[10px] text-slate-500">Target: 7.0%</div>
-        </GlassCard>
 
-        {/* 5. Predicted Stabilization Time */}
-        <GlassCard className="p-4 border-slate-800">
-          <div className="text-xs text-slate-400">PREDICTED STABILIZATION</div>
-          <div className="mt-2 text-2xl font-bold text-emerald-400">
-            {metrics.predictedStabilizationTime} <span className="text-xs text-slate-400 font-normal">min</span>
+          {/* 5. Predicted Stabilization Time */}
+          <div className="p-4 space-y-1">
+            <div className="text-xs text-slate-400">PREDICTED STABILIZATION</div>
+            <div className="text-xl font-bold text-emerald-400">
+              {metrics.predictedStabilizationTime} <span className="text-xs text-slate-400 font-normal">min</span>
+            </div>
+            <div className="text-[10px] text-slate-500 pt-1">Faster by -4.2 min</div>
           </div>
-          <div className="mt-1 text-[10px] text-slate-500">Faster by -4.2 min</div>
-        </GlassCard>
 
-        {/* 6. Confidence Score */}
-        <GlassCard className="p-4 border-slate-800">
-          <div className="text-xs text-slate-400">CONFIDENCE SCORE</div>
-          <div className="mt-2 text-2xl font-bold text-slate-100">
-            {metrics.confidenceScore}%
+          {/* 6. Confidence Score */}
+          <div className="p-4 space-y-1">
+            <div className="text-xs text-slate-400">CONFIDENCE SCORE</div>
+            <div className="text-xl font-bold text-slate-100">
+              {metrics.confidenceScore}%
+            </div>
+            <div className="text-[10px] text-emerald-400 font-semibold pt-1">Honeywell MPC ML</div>
           </div>
-          <div className="mt-1 text-[10px] text-emerald-400 font-semibold">Honeywell MPC ML</div>
-        </GlassCard>
-      </div>
+        </div>
+      </GlassCard>
 
       {/* Prediction Timeline Section (Current, 30s later, 60s later) */}
       <GlassCard title="Prediction Timeline Forecast" subtitle="3-step trajectory state cards (Current ➔ +30s ➔ +60s)">
@@ -221,32 +215,32 @@ export const AIPredictionPage: React.FC = () => {
               key={step.label}
               className={`p-5 rounded-xl border transition-all relative ${
                 step.status === 'safe'
-                  ? 'bg-emerald-950/20 border-emerald-800/80 shadow-lg shadow-emerald-950/30'
+                  ? 'bg-slate-900/40 border-slate-800/40'
                   : step.status === 'warning'
-                  ? 'bg-amber-950/20 border-amber-800/80 shadow-lg shadow-amber-950/30'
-                  : 'bg-red-950/20 border-red-800/80 shadow-lg shadow-red-950/30'
+                  ? 'bg-amber-950/20 border-amber-900/30'
+                  : 'bg-red-950/20 border-red-900/30'
               }`}
             >
-              <div className="flex items-center justify-between mb-3 border-b border-slate-800 pb-2">
+              <div className="flex items-center justify-between mb-3 border-b border-slate-800/40 pb-2">
                 <div>
                   <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">TIMELINE STEP 0{idx + 1}</span>
                   <span className="text-sm font-bold text-slate-100 font-mono">{step.label}</span>
                 </div>
-                <span className="text-xs font-mono font-extrabold text-cyan-400 bg-slate-950 px-2 py-0.5 rounded border border-slate-800">
+                <span className="text-xs font-mono font-extrabold text-cyan-400 bg-slate-900/60 px-2 py-0.5 rounded border border-slate-800/40">
                   {step.timeOffset}
                 </span>
               </div>
 
-              <div className="space-y-2.5 font-mono text-xs mb-4">
-                <div className="flex justify-between items-center p-2 rounded bg-slate-950/80 border border-slate-800">
+              <div className="space-y-2.5 font-mono text-xs mb-4 divide-y divide-slate-800/30">
+                <div className="flex justify-between items-center py-1.5">
                   <span className="text-slate-400">Basis Weight:</span>
                   <span className="font-bold text-slate-100">{step.basisWeight} g/m²</span>
                 </div>
-                <div className="flex justify-between items-center p-2 rounded bg-slate-950/80 border border-slate-800">
+                <div className="flex justify-between items-center py-1.5">
                   <span className="text-slate-400">Moisture Level:</span>
                   <span className="font-bold text-amber-400">{step.moisture}%</span>
                 </div>
-                <div className="flex justify-between items-center p-2 rounded bg-slate-950/80 border border-slate-800">
+                <div className="flex justify-between items-center py-1.5">
                   <span className="text-slate-400">Off-Spec Probability:</span>
                   <span className={`font-bold ${step.offSpecProb > 60 ? 'text-red-400' : step.offSpecProb > 30 ? 'text-amber-400' : 'text-emerald-400'}`}>
                     {step.offSpecProb}%
@@ -254,7 +248,7 @@ export const AIPredictionPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between pt-2 border-t border-slate-800/80">
+              <div className="flex items-center justify-between pt-2 border-t border-slate-800/40">
                 <span className="text-[11px] font-mono text-slate-400">Color Code Status:</span>
                 {getStatusBadge(step.status)}
               </div>
