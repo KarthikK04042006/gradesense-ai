@@ -26,12 +26,20 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           {/* Column 1: Brand & Subtitle */}
           <div className="space-y-3">
             <div className="flex items-center gap-2.5">
-              <div className="h-8 px-2 shrink-0 rounded-md bg-white flex items-center justify-center shadow">
-                <img
-                  src="/honeywell-technologies-logo.png"
-                  alt="Honeywell Technologies"
-                  className="h-6 w-auto object-contain"
-                />
+              <div className="h-10 px-3 shrink-0 rounded-xl bg-[#0f1422] border border-slate-800 border-l-[3.5px] border-l-[#E51A24] flex items-center gap-2.5 shadow-md select-none">
+                <div className="w-6 h-6 shrink-0 rounded bg-[#E51A24] flex items-center justify-center shadow-sm">
+                  <svg className="w-4 h-4 fill-white" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 12 h24 v26 h28 v-26 h24 v76 h-24 v-28 h-28 v28 h-24 z" />
+                  </svg>
+                </div>
+                <div className="flex flex-col justify-center leading-tight">
+                  <span className="text-[#E51A24] font-extrabold text-[12px] tracking-tight font-sans">
+                    Honeywell
+                  </span>
+                  <span className="text-[#E51A24] text-[9px] font-semibold tracking-normal font-sans opacity-90 -mt-0.5">
+                    Technologies
+                  </span>
+                </div>
               </div>
               <span className="font-extrabold text-sm text-slate-100 font-sans tracking-tight">
                 Grade<span className="text-[#E51A24]">Sense</span> AI

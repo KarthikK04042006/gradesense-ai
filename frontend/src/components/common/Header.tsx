@@ -78,15 +78,25 @@ export const Header: React.FC<HeaderProps> = ({ onOpenShortcuts, theme = 'dark',
       className="h-[56px] border-b border-slate-800/70 bg-[#080c14]/98 backdrop-blur-xl px-5 flex items-center justify-between sticky top-0 z-40 gap-3"
       style={{ boxShadow: '0 1px 0 0 rgba(51,65,85,0.3)' }}
     >
-      {/* ─── LEFT: Brand (Official Honeywell Technologies Logo Image) ─ */}
+      {/* ─── LEFT: Brand (Official Honeywell Technologies Dark Industrial Logo) ─ */}
       <div className="flex items-center gap-2.5 shrink-0">
-        {/* Official Honeywell Technologies Logo Banner */}
-        <div className="h-9 px-2 shrink-0 rounded-lg bg-white flex items-center justify-center shadow-md border border-slate-700/50 select-none overflow-hidden">
-          <img
-            src="/honeywell-technologies-logo.png"
-            alt="Honeywell Technologies"
-            className="h-7 w-auto object-contain"
-          />
+        {/* Official Honeywell Technologies Dark Industrial Logo Badge */}
+        <div className="h-10 px-3 shrink-0 rounded-xl bg-[#0f1422] border border-slate-800 border-l-[3.5px] border-l-[#E51A24] flex items-center gap-2.5 shadow-md select-none">
+          {/* Red H Block Square Icon */}
+          <div className="w-6 h-6 shrink-0 rounded bg-[#E51A24] flex items-center justify-center shadow-sm">
+            <svg className="w-4 h-4 fill-white" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 12 h24 v26 h28 v-26 h24 v76 h-24 v-28 h-28 v28 h-24 z" />
+            </svg>
+          </div>
+          {/* Stacked Red Text */}
+          <div className="flex flex-col justify-center leading-tight">
+            <span className="text-[#E51A24] font-extrabold text-[12px] tracking-tight font-sans">
+              Honeywell
+            </span>
+            <span className="text-[#E51A24] text-[9px] font-semibold tracking-normal font-sans opacity-90 -mt-0.5">
+              Technologies
+            </span>
+          </div>
         </div>
 
         {/* 3. Product Name & Badge */}
