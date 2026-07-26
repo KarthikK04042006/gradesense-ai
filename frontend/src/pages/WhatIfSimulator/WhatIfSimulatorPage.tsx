@@ -197,10 +197,10 @@ export const WhatIfSimulatorPage: React.FC = () => {
       <GlassCard title="Side-by-Side Scenario Comparison Matrix" subtitle="Scenario A (Baseline Standard MPC) vs Scenario B (Simulated Setpoints)">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-mono text-xs pt-2">
           {/* Scenario A: Baseline */}
-          <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-2">
+          <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/30 space-y-3">
+            <div className="flex items-center justify-between border-b border-slate-800/40 pb-2">
               <span className="font-bold text-slate-300">SCENARIO A: BASELINE MANUAL MPC</span>
-              <span className="text-[10px] px-2 py-0.5 rounded bg-slate-900 text-slate-400 border border-slate-800">UNOPTIMIZED</span>
+              <span className="text-[10px] px-2 py-0.5 rounded bg-slate-900/60 text-slate-400 border border-slate-800/40">UNOPTIMIZED</span>
             </div>
 
             <div className="space-y-2">
@@ -220,7 +220,7 @@ export const WhatIfSimulatorPage: React.FC = () => {
                 <span className="text-slate-400">Quality Risk Score:</span>
                 <span className="font-bold text-red-400">{baseline.risk} / 100</span>
               </div>
-              <div className="flex justify-between pt-2 border-t border-slate-800">
+              <div className="flex justify-between pt-2 border-t border-slate-800/40">
                 <span className="text-slate-300 font-bold">Total Transition Cost:</span>
                 <span className="font-bold text-red-400 text-sm">${baseline.cost.toLocaleString()}</span>
               </div>
@@ -228,10 +228,10 @@ export const WhatIfSimulatorPage: React.FC = () => {
           </div>
 
           {/* Scenario B: Simulated Setpoints */}
-          <div className="p-4 rounded-xl bg-emerald-950/20 border border-emerald-800/80 space-y-3">
-            <div className="flex items-center justify-between border-b border-emerald-800/60 pb-2">
+          <div className="p-4 rounded-xl bg-emerald-950/30 border border-emerald-800/40 space-y-3">
+            <div className="flex items-center justify-between border-b border-emerald-800/40 pb-2">
               <span className="font-bold text-emerald-400">SCENARIO B: SIMULATED SETPOINTS</span>
-              <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800 font-bold">ACTIVE SIMULATION</span>
+              <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-400 border border-emerald-800/60 font-bold">ACTIVE SIMULATION</span>
             </div>
 
             <div className="space-y-2">

@@ -95,99 +95,100 @@ export const BusinessImpactPage: React.FC = () => {
         </div>
       </GlassCard>
 
-      {/* 6 Core Display Cards with Animated Counters */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 font-mono">
-        
-        {/* 1. Paper Saved */}
-        <GlassCard glowColor="amber" className="p-4">
-          <div className="flex items-center justify-between text-xs text-slate-400">
-            <span>PAPER SAVED</span>
-            <Trash2 className="w-4 h-4 text-amber-400" />
+      {/* Key ROI Metrics Grid (Single Unified Stat Strip Container) */}
+      <GlassCard className="p-0 border-slate-800/60 bg-slate-900/60 overflow-hidden font-mono">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 divide-y sm:divide-y-0 lg:divide-x divide-slate-800/50">
+          {/* 1. Paper Saved */}
+          <div className="p-4 space-y-1">
+            <div className="flex items-center justify-between text-xs text-slate-400">
+              <span>PAPER SAVED</span>
+              <Trash2 className="w-3.5 h-3.5 text-amber-400" />
+            </div>
+            <div className="text-xl font-bold text-slate-100">
+              <AnimatedCounter value={metrics.paperSaved} decimals={1} suffix=" Tons" />
+            </div>
+            <div className="flex items-center justify-between text-[10px] pt-1">
+              <span className="text-slate-500">Scrap Reduction</span>
+              <span className="text-emerald-400 font-bold">-28.4%</span>
+            </div>
           </div>
-          <div className="mt-2 text-2xl font-bold text-slate-100">
-            <AnimatedCounter value={metrics.paperSaved} decimals={1} suffix=" Tons" />
-          </div>
-          <div className="mt-1 flex items-center justify-between text-[10px]">
-            <span className="text-slate-500">Scrap Reduction</span>
-            <span className="text-emerald-400 font-bold">-28.4%</span>
-          </div>
-        </GlassCard>
 
-        {/* 2. Production Time Saved */}
-        <GlassCard glowColor="cyan" className="p-4">
-          <div className="flex items-center justify-between text-xs text-slate-400">
-            <span>TIME SAVED</span>
-            <Clock className="w-4 h-4 text-cyan-400" />
+          {/* 2. Time Saved */}
+          <div className="p-4 space-y-1">
+            <div className="flex items-center justify-between text-xs text-slate-400">
+              <span>TIME SAVED</span>
+              <Clock className="w-3.5 h-3.5 text-cyan-400" />
+            </div>
+            <div className="text-xl font-bold text-slate-100">
+              <AnimatedCounter value={metrics.timeSavedHours} decimals={1} suffix=" Hours" />
+            </div>
+            <div className="flex items-center justify-between text-[10px] pt-1">
+              <span className="text-slate-500">Downtime Saved</span>
+              <span className="text-cyan-400 font-bold">-4.8 min/run</span>
+            </div>
           </div>
-          <div className="mt-2 text-2xl font-bold text-slate-100">
-            <AnimatedCounter value={metrics.timeSavedHours} decimals={1} suffix=" Hours" />
-          </div>
-          <div className="mt-1 flex items-center justify-between text-[10px]">
-            <span className="text-slate-500">Downtime Saved</span>
-            <span className="text-cyan-400 font-bold">-4.8 min/run</span>
-          </div>
-        </GlassCard>
 
-        {/* 3. Energy Saved */}
-        <GlassCard glowColor="red" className="p-4">
-          <div className="flex items-center justify-between text-xs text-slate-400">
-            <span>ENERGY SAVED</span>
-            <Zap className="w-4 h-4 text-amber-400" />
+          {/* 3. Energy Saved */}
+          <div className="p-4 space-y-1">
+            <div className="flex items-center justify-between text-xs text-slate-400">
+              <span>ENERGY SAVED</span>
+              <Zap className="w-3.5 h-3.5 text-amber-400" />
+            </div>
+            <div className="text-xl font-bold text-amber-400">
+              <AnimatedCounter value={metrics.energySavedkWh} decimals={0} suffix=" kWh" />
+            </div>
+            <div className="flex items-center justify-between text-[10px] pt-1">
+              <span className="text-slate-500">Steam Efficiency</span>
+              <span className="text-emerald-400 font-bold">+18.2%</span>
+            </div>
           </div>
-          <div className="mt-2 text-2xl font-bold text-amber-400">
-            <AnimatedCounter value={metrics.energySavedkWh} decimals={0} suffix=" kWh" />
-          </div>
-          <div className="mt-1 flex items-center justify-between text-[10px]">
-            <span className="text-slate-500">Steam Efficiency</span>
-            <span className="text-emerald-400 font-bold">+18.2%</span>
-          </div>
-        </GlassCard>
 
-        {/* 4. Estimated Cost Savings */}
-        <GlassCard glowColor="cyan" className="p-4 border-emerald-500/40 bg-emerald-950/20">
-          <div className="flex items-center justify-between text-xs text-slate-400">
-            <span>COST SAVINGS</span>
-            <DollarSign className="w-4 h-4 text-emerald-400" />
+          {/* 4. Estimated Cost Savings */}
+          <div className="p-4 space-y-1">
+            <div className="flex items-center justify-between text-xs text-slate-400">
+              <span>COST SAVINGS</span>
+              <DollarSign className="w-3.5 h-3.5 text-emerald-400" />
+            </div>
+            <div className="text-xl font-bold text-emerald-400">
+              <AnimatedCounter value={metrics.costSavingsUsd} decimals={0} prefix="$" />
+            </div>
+            <div className="flex items-center justify-between text-[10px] pt-1">
+              <span className="text-slate-400">Net Annual ROI</span>
+              <span className="text-emerald-400 font-bold">+340%</span>
+            </div>
           </div>
-          <div className="mt-2 text-2xl font-bold text-emerald-400">
-            <AnimatedCounter value={metrics.costSavingsUsd} decimals={0} prefix="$" />
-          </div>
-          <div className="mt-1 flex items-center justify-between text-[10px]">
-            <span className="text-slate-400">Net Annual ROI</span>
-            <span className="text-emerald-400 font-bold">+340%</span>
-          </div>
-        </GlassCard>
 
-        {/* 5. CO2 Reduction */}
-        <GlassCard glowColor="cyan" className="p-4">
-          <div className="flex items-center justify-between text-xs text-slate-400">
-            <span>CO₂ REDUCTION</span>
-            <Leaf className="w-4 h-4 text-emerald-400" />
+          {/* 5. CO2 Reduction */}
+          <div className="p-4 space-y-1">
+            <div className="flex items-center justify-between text-xs text-slate-400">
+              <span>CO₂ REDUCTION</span>
+              <Leaf className="w-3.5 h-3.5 text-emerald-400" />
+            </div>
+            <div className="text-xl font-bold text-emerald-400">
+              <AnimatedCounter value={metrics.co2ReductionTons} decimals={1} suffix=" Tons" />
+            </div>
+            <div className="flex items-center justify-between text-[10px] pt-1">
+              <span className="text-slate-500">Carbon Abated</span>
+              <span className="text-emerald-400 font-bold">-16.5%</span>
+            </div>
           </div>
-          <div className="mt-2 text-2xl font-bold text-emerald-400">
-            <AnimatedCounter value={metrics.co2ReductionTons} decimals={1} suffix=" Tons" />
-          </div>
-          <div className="mt-1 flex items-center justify-between text-[10px]">
-            <span className="text-slate-500">Carbon Abated</span>
-            <span className="text-emerald-400 font-bold">-16.5%</span>
-          </div>
-        </GlassCard>
 
-        {/* 6. Machine Efficiency */}
-        <GlassCard className="p-4 border-slate-800">
-          <div className="flex items-center justify-between text-xs text-slate-400">
-            <span>EFFICIENCY (OEE)</span>
-            <Gauge className="w-4 h-4 text-cyan-400" />
+          {/* 6. Machine Efficiency */}
+          <div className="p-4 space-y-1">
+            <div className="flex items-center justify-between text-xs text-slate-400">
+              <span>EFFICIENCY (OEE)</span>
+              <Gauge className="w-3.5 h-3.5 text-cyan-400" />
+            </div>
+            <div className="text-xl font-bold text-slate-100">
+              <AnimatedCounter value={metrics.machineEfficiency} decimals={1} suffix="%" />
+            </div>
+            <div className="flex items-center justify-between text-[10px] pt-1">
+              <span className="text-slate-500">PM-4 Overall</span>
+              <span className="text-cyan-400 font-bold">WORLD CLASS</span>
+            </div>
           </div>
-          <div className="mt-2 text-2xl font-bold text-slate-100">
-            <AnimatedCounter value={metrics.machineEfficiency} decimals={1} suffix="%" />
-          </div>
-          <div className="mt-1 flex items-center justify-between text-[10px]">
-            <span className="text-slate-500">PM-4 Overall</span>
-            <span className="text-cyan-400 font-bold">WORLD CLASS</span>
-          </div>
-        </GlassCard>
-      </div>
+        </div>
+      </GlassCard>
 
       {/* Sustainability & ROI Section */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 font-mono text-xs">
@@ -206,7 +207,7 @@ export const BusinessImpactPage: React.FC = () => {
                 <span className="text-slate-400">Capital Recovery Progress</span>
                 <span className="text-cyan-400 font-bold">100% Fully Recovered</span>
               </div>
-              <div className="w-full h-3 bg-slate-950 rounded-full border border-slate-800 overflow-hidden">
+              <div className="w-full h-2.5 bg-slate-900/60 rounded-full border border-slate-800/40 overflow-hidden">
                 <motion.div
                   className="h-full bg-gradient-to-r from-emerald-600 to-cyan-400"
                   initial={{ width: 0 }}
@@ -216,7 +217,7 @@ export const BusinessImpactPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-1 font-sans">
+            <div className="p-3 rounded-xl bg-slate-900/40 border border-slate-800/30 space-y-1 font-sans">
               <div className="text-[10px] font-mono text-slate-400 uppercase font-bold">ANNUAL VALUE DRIVERS:</div>
               <ul className="space-y-1 text-slate-300 text-xs font-mono">
                 <li>• Scrap Avoidance: <strong>$148,200 / yr</strong></li>
@@ -230,27 +231,27 @@ export const BusinessImpactPage: React.FC = () => {
         {/* Carbon Offset Visualizer */}
         <GlassCard title="Sustainability & Carbon Offset Milestone" subtitle="Environmental impact tracking" className="lg:col-span-2">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-2">
-            <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center text-center space-y-2">
-              <div className="p-3 rounded-full bg-emerald-950 border border-emerald-500/40 text-emerald-400">
-                <Leaf className="w-6 h-6 animate-bounce" />
+            <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/30 flex flex-col items-center justify-center text-center space-y-2">
+              <div className="p-2.5 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400">
+                <Leaf className="w-5 h-5 animate-bounce" />
               </div>
-              <div className="text-xl font-bold text-emerald-400 font-mono">92.4 Tons CO₂</div>
+              <div className="text-lg font-bold text-emerald-400 font-mono">92.4 Tons CO₂</div>
               <div className="text-[11px] text-slate-400">Equivalent to planting 4,200 mature pine trees annually</div>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center text-center space-y-2">
-              <div className="p-3 rounded-full bg-cyan-950 border border-cyan-500/40 text-cyan-400">
-                <Zap className="w-6 h-6" />
+            <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/30 flex flex-col items-center justify-center text-center space-y-2">
+              <div className="p-2.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400">
+                <Zap className="w-5 h-5" />
               </div>
-              <div className="text-xl font-bold text-cyan-400 font-mono">184.5 MWh</div>
+              <div className="text-lg font-bold text-cyan-400 font-mono">184.5 MWh</div>
               <div className="text-[11px] text-slate-400">Steam thermal energy saved across 1,420 transitions</div>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center text-center space-y-2">
-              <div className="p-3 rounded-full bg-amber-950 border border-amber-500/40 text-amber-400">
-                <Sparkles className="w-6 h-6" />
+            <div className="p-4 rounded-xl bg-slate-900/40 border border-slate-800/30 flex flex-col items-center justify-center text-center space-y-2">
+              <div className="p-2.5 rounded-full bg-amber-950/60 border border-amber-500/30 text-amber-400">
+                <Sparkles className="w-5 h-5" />
               </div>
-              <div className="text-xl font-bold text-amber-400 font-mono">Zero Break Goal</div>
+              <div className="text-lg font-bold text-amber-400 font-mono">Zero Break Goal</div>
               <div className="text-[11px] text-slate-400">99.8% paper web continuity during MPC ramps</div>
             </div>
           </div>
