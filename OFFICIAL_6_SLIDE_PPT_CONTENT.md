@@ -1,5 +1,5 @@
-# 📄 OFFICIAL 6-SLIDE PPT CONTENT
-### Formatted for Hackathon Idea Submission Template (Max 6 Slides)
+# 📄 OFFICIAL SLIDE DECK CONTENT
+### Formatted for Hackathon Presentation & Idea Submission Template
 
 ---
 
@@ -93,3 +93,39 @@
 - **Explainable AI (SHAP)**: 6 interactive sliders with real-time SHAP feature attributions.
 - **What-If Scenario Simulator**: Interactive trajectory curves with automated Winner Matrix.
 - **Executive PDF Audit Generator**: 1-click print-ready PDF export with quality compliance signatures.
+
+---
+
+## 📚 SLIDE 7: RESEARCH AND REFERENCES
+
+### Details / Links of Reference & Research Work
+1. **Honeywell Experion® PKS Process Control Documentation**:
+   - Honeywell Multivariable Model Predictive Control (MD Control) for Paper Machine Grade Changes.
+2. **TAPPI Industrial Paper Manufacturing Standards**:
+   - TAPPI T-410 (Basis Weight of Paper & Paperboard) & TAPPI T-412 (Moisture Content Standards).
+3. **Machine Learning & Explainable AI Papers**:
+   - Lundberg & Lee (2017): *A Unified Approach to Interpreting Model Predictions (SHAP Feature Attribution)*.
+   - Chen & Guestrin (2016): *XGBoost: A Scalable Tree Boosting System for Time-Series Anomaly Detection*.
+4. **Open Source & Live Artifacts**:
+   - GitHub Repository: [https://github.com/KarthikK04042006/gradesense-ai](https://github.com/KarthikK04042006/gradesense-ai)
+   - OpenAPI Swagger Docs: [https://gradesense-backend-8n9r.onrender.com/docs](https://gradesense-backend-8n9r.onrender.com/docs)
+
+---
+
+## 🖼️ SLIDE 8: ARTIFACTS
+
+### Relevant Artifacts
+1. **Copy of Code Embedded / Source Code Repository**:
+   - Full-stack Python FastAPI backend (`app/main.py`, `app/ml/xgboost_model.py`, `app/ml/shap_explainer.py`).
+   - React 18 + TypeScript Control Room Frontend (`src/pages/Dashboard/DashboardPage.tsx`, `src/components/common/Header.tsx`).
+   - Docker Container Deployment (`docker-compose.yml`, `backend/Dockerfile`, `frontend/Dockerfile`).
+
+2. **Snaps of Solution Proposal & Flow Charts**:
+   - 9-Stage Autonomous Sequential Execution Pipeline Diagram.
+   - Multivariable Correlation Matrix (*Stock Flow vs. Speed vs. Steam Pressure vs. Basis Weight*).
+
+3. **Dashboard Snaps & Live UI Screenshots**:
+   - **PM-4 Control Room Dashboard**: Real-time 100Hz OPC-UA telemetry grid & Before vs. After ROI comparison banner.
+   - **Explainable AI (SHAP) Diagnostics**: Interactive 6-parameter sliders with physics rationale & historical inference tagging.
+   - **What-If Scenario Ramp Simulator**: Plotly Basis Weight & Moisture trajectory curves with automated Winner Matrix.
+   - **Dual Light/Dark Mode**: High-contrast Apple × Honeywell Forge dark industrial UI and light mode.
