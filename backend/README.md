@@ -1,32 +1,25 @@
-# GradeSense AI - Backend Service
+---
+title: GradeSense AI FastAPI Backend
+emoji: 🏭
+colorFrom: red
+colorTo: gray
+sdk: docker
+app_port: 8000
+---
 
-FastAPI-powered decision support API for Honeywell Paper Manufacturing Grade Change Optimization.
+# GradeSense AI — Honeywell Paper Machine Backend API
 
-## Features
-- **Prediction API**: Grade transition time & off-spec scrap estimation.
-- **Recommendation API**: Model predictive setpoint trajectories & ramp rates.
-- **Historical Case API**: Historical grade transition benchmark log.
-- **Chat API**: Conversational copilot endpoint for mill operators.
-- **Cost Calculation API**: Scrap, energy, and downtime financial modeling.
-- **SQLite + SQLAlchemy**: Auto-seeded manufacturing dummy database.
+Python FastAPI backend featuring XGBoost risk prediction, LSTM moisture forecasts, SHAP explainability, and Honeywell MPC simulation engine.
 
-## Quick Start
+## Hugging Face Spaces Deployment
+1. Go to [huggingface.co/new-space](https://huggingface.co/new-space)
+2. Space Name: `gradesense-ai-backend`
+3. SDK: **Docker**
+4. Upload all files from the `backend/` directory.
+5. Live API URL: `https://YOUR_HF_USERNAME-gradesense-ai-backend.hf.space/docs`
 
-```bash
-# 1. Create Python virtual environment
-python -m venv venv
-
-# 2. Activate virtual environment
-# On Windows:
-.\venv\Scripts\activate
-# On Linux/macOS:
-source venv/bin/activate
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Run development server
-uvicorn app.main:app --reload --port 8000
-```
-
-Open Swagger documentation at: `http://127.0.0.1:8000/docs`
+## Render.com Deployment
+1. Go to [render.com](https://render.com) ➔ New Web Service.
+2. Root Directory: `backend`
+3. Build Command: `pip install -r requirements.txt`
+4. Start Command: `python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT`
