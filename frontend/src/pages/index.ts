@@ -1,0 +1,10 @@
+export { DashboardPage } from './Dashboard/DashboardPage';
+export { AIPredictionPage } from './AIPrediction/AIPredictionPage';
+export { ExplainableAIPage } from './ExplainableAI/ExplainableAIPage';
+export { HistoricalExplorerPage } from './HistoricalExplorer/HistoricalExplorerPage';
+export { BusinessImpactPage } from './BusinessImpact/BusinessImpactPage';
+export { DigitalTwinPage } from './DigitalTwin/DigitalTwinPage';
+export { AICopilotPage } from './AICopilot/AICopilotPage';
+export { WhatIfSimulatorPage } from './WhatIfSimulator/WhatIfSimulatorPage';
+export { AnalyticsPage } from './Analytics/AnalyticsPage';
+export { SettingsPage } from './Settings/SettingsPage';

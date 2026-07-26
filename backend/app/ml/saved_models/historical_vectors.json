@@ -1,0 +1,112 @@
+[
+  {
+    "transitionId": "TR-101",
+    "fromGrade": "KRAFT-42",
+    "toGrade": "KRAFT-33",
+    "features": [
+      885.0,
+      3.8,
+      3650.0,
+      7.0,
+      140.0,
+      185.0
+    ],
+    "similarityScore": 96.4,
+    "recoveryTimeMin": 16.8,
+    "scrapTons": 3.8,
+    "finalResult": "Successful",
+    "previousActions": [
+      "Decreased Stock Flow from 4200 to 3650 L/min at t=0",
+      "Ramped Wire Speed +130 m/min (820 -> 950 m/min) over 2.5 min",
+      "Reduced Section 4 Steam Pressure from 4.2 to 3.5 bar at t=5 min"
+    ]
+  },
+  {
+    "transitionId": "TR-103",
+    "fromGrade": "LINER-50",
+    "toGrade": "KRAFT-42",
+    "features": [
+      820.0,
+      4.1,
+      4100.0,
+      7.5,
+      120.0,
+      205.0
+    ],
+    "similarityScore": 92.1,
+    "recoveryTimeMin": 19.5,
+    "scrapTons": 4.2,
+    "finalResult": "Successful",
+    "previousActions": [
+      "Lowered Stock Flow by -350 L/min",
+      "Increased Machine Speed by +80 m/min",
+      "Adjusted Headbox Jet Drag Ratio to 1.02"
+    ]
+  },
+  {
+    "transitionId": "TR-104",
+    "fromGrade": "KRAFT-42",
+    "toGrade": "KRAFT-33",
+    "features": [
+      910.0,
+      4.0,
+      3700.0,
+      7.2,
+      130.0,
+      175.0
+    ],
+    "similarityScore": 89.2,
+    "recoveryTimeMin": 22.0,
+    "scrapTons": 5.5,
+    "finalResult": "Warning",
+    "previousActions": [
+      "Decreased Stock Flow from 4150 to 3700 L/min",
+      "Increased Wire Speed +110 m/min",
+      "Maintained Steam Pressure at 4.0 bar"
+    ]
+  },
+  {
+    "transitionId": "TR-105",
+    "fromGrade": "MED-26",
+    "toGrade": "WHITE-38",
+    "features": [
+      1020.0,
+      3.2,
+      3400.0,
+      6.8,
+      110.0,
+      127.0
+    ],
+    "similarityScore": 86.0,
+    "recoveryTimeMin": 15.4,
+    "scrapTons": 3.1,
+    "finalResult": "Successful",
+    "previousActions": [
+      "Increased Ash/Filler slurry flow +60 L/min",
+      "Adjusted Soft Calender Nip Pressure to 110 kN/m",
+      "Lowered Wire Speed -50 m/min"
+    ]
+  },
+  {
+    "transitionId": "TR-102",
+    "fromGrade": "KRAFT-33",
+    "toGrade": "LINER-50",
+    "features": [
+      760.0,
+      4.5,
+      4500.0,
+      8.0,
+      180.0,
+      244.0
+    ],
+    "similarityScore": 78.5,
+    "recoveryTimeMin": 28.5,
+    "scrapTons": 7.4,
+    "finalResult": "Failed",
+    "previousActions": [
+      "Increased Stock Flow to 4500 L/min at t=0",
+      "Decreased Wire Speed by -120 m/min",
+      "Raised Dryer Group 2 Steam to 4.4 bar"
+    ]
+  }
+]

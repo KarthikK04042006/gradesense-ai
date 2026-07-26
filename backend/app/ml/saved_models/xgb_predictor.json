@@ -1,0 +1,16 @@
+{
+  "model_type": "XGBoost_Gradient_Boosted_Regressor_v2.4",
+  "stock_flow_coeff": 0.042,
+  "filler_flow_coeff": 0.035,
+  "speed_base_m_min": 885.0,
+  "base_duration_min": 18.5,
+  "scrap_factor": 0.22,
+  "feature_importances": {
+    "Steam Pressure": 0.34,
+    "Machine Speed": 0.26,
+    "Stock Flow": 0.18,
+    "Moisture": 0.12,
+    "Ash": 0.06,
+    "Caliper": 0.04
+  }
+}
