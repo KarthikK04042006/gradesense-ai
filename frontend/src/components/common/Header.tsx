@@ -78,20 +78,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenShortcuts, theme = 'dark',
       className="h-[56px] border-b border-slate-800/70 bg-[#080c14]/98 backdrop-blur-xl px-5 flex items-center justify-between sticky top-0 z-40 gap-3"
       style={{ boxShadow: '0 1px 0 0 rgba(51,65,85,0.3)' }}
     >
-      {/* ─── LEFT: Brand (Official Honeywell H Icon & Red Wordmark Banner) ─ */}
+      {/* ─── LEFT: Brand (Official Honeywell Technologies Logo Image) ─ */}
       <div className="flex items-center gap-2.5 shrink-0">
-        {/* 1. Official Honeywell H Block Square Icon */}
-        <div className="h-8 w-8 shrink-0 rounded-lg bg-[#E51A24] flex items-center justify-center shadow-lg shadow-red-950/60 border border-red-500/40">
-          <svg className="w-5 h-5 fill-white" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 12 h24 v26 h28 v-26 h24 v76 h-24 v-28 h-28 v28 h-24 z" />
-          </svg>
-        </div>
-
-        {/* 2. Official Honeywell Red Wordmark Banner */}
-        <div className="h-8 px-2.5 shrink-0 rounded-lg bg-[#E51A24] flex items-center justify-center shadow-md shadow-red-950/60 border border-red-500/30 select-none">
-          <span className="text-white font-extrabold text-[14px] tracking-[-0.04em] leading-none font-sans">
-            Honeywell
-          </span>
+        {/* Official Honeywell Technologies Logo Banner */}
+        <div className="h-9 px-2 shrink-0 rounded-lg bg-white flex items-center justify-center shadow-md border border-slate-700/50 select-none overflow-hidden">
+          <img
+            src="/honeywell-technologies-logo.png"
+            alt="Honeywell Technologies"
+            className="h-7 w-auto object-contain"
+          />
         </div>
 
         {/* 3. Product Name & Badge */}
