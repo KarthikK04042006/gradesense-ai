@@ -395,7 +395,7 @@ export const DigitalTwinPage: React.FC = () => {
               <div className="space-y-1.5">
                 <div className="flex justify-between">
                   <span className="text-slate-400">Machine Speed (Conveyor & Rollers)</span>
-                  <span className="text-emerald-400 font-bold">{machineSpeed} m/min</span>
+                  <span className="text-emerald-400 font-bold">{Math.round(machineSpeed)} m/min</span>
                 </div>
                 <input
                   type="range"
@@ -412,7 +412,7 @@ export const DigitalTwinPage: React.FC = () => {
               <div className="space-y-1.5">
                 <div className="flex justify-between">
                   <span className="text-slate-400">Steam Pressure (Vapor & Thermal Heat)</span>
-                  <span className="text-red-400 font-bold">{steamPressure} bar</span>
+                  <span className="text-red-400 font-bold">{steamPressure.toFixed(2)} bar</span>
                 </div>
                 <input
                   type="range"
@@ -429,7 +429,7 @@ export const DigitalTwinPage: React.FC = () => {
               <div className="space-y-1.5">
                 <div className="flex justify-between">
                   <span className="text-slate-400">Stock Flow (Headbox Slurry Rate)</span>
-                  <span className="text-cyan-400 font-bold">{stockFlow} L/min</span>
+                  <span className="text-cyan-400 font-bold">{Math.round(stockFlow)} L/min</span>
                 </div>
                 <input
                   type="range"
