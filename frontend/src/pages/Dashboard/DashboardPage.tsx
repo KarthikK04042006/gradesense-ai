@@ -455,20 +455,6 @@ export const DashboardPage: React.FC = () => {
         </div>
       </GlassCard>
 
-      {/* 5. AI Decision Flow Architecture Visualization */}
-      <GlassCard className="bg-slate-900/60 border-slate-800">
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-amber-400" />
-            <h3 className="text-xs font-mono font-bold text-slate-200 uppercase tracking-wider">
-              Real-Time AI Decision Pipeline Flow
-            </h3>
-          </div>
-          <span className="text-[10px] font-mono text-cyan-400">Honeywell Experion® Engine</span>
-        </div>
-        <AIDecisionFlow />
-      </GlassCard>
-
       {/* 6. Main Telemetry Graphs & Confidence Gauge Sidebar */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Real-time Telemetry Trend Graph */}
