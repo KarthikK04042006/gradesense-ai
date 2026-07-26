@@ -210,189 +210,181 @@ export const DashboardPage: React.FC = () => {
         )}
       </div>
 
-      {/* 2. Before vs After AI Optimization Panel */}
-      <GlassCard className="bg-slate-900/60 border-slate-800">
-        <div className="flex items-center justify-between mb-4">
+      {/* 2. Before vs After Impact Summary (Unified Stat Strip) */}
+      <GlassCard className="p-5 border-slate-800/60 bg-slate-900/60 backdrop-blur-xl">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-4 mb-4 border-b border-slate-800/50">
           <div className="flex items-center gap-2">
             <Sparkles className="w-4 h-4 text-amber-400" />
-            <h3 className="text-sm font-bold text-slate-100 uppercase tracking-wider font-mono">
+            <h2 className="text-xs font-mono font-bold tracking-wider text-slate-300 uppercase">
               Before vs After AI Impact Comparison
-            </h3>
+            </h2>
           </div>
-          <span className="text-xs font-mono text-slate-400">
-            Status: <strong className={isAiApplied ? 'text-emerald-400' : 'text-amber-400'}>{isAiApplied ? 'AI Optimized' : 'Standard Manual MPC'}</strong>
-          </span>
+          <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
+            <span>Control Mode:</span>
+            <span className={`font-semibold ${isAiApplied ? 'text-emerald-400' : 'text-slate-300'}`}>
+              {isAiApplied ? 'Honeywell GradeSense™ Optimal' : 'Standard Manual MPC'}
+            </span>
+          </div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-          <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-center space-y-1">
-            <span className="text-[10px] font-mono text-slate-400 uppercase">RECOVERY TIME</span>
-            <div className="text-lg font-bold text-slate-100 font-mono">
+        {/* Seamless Stat Strip — No nested boxes */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-800/50">
+          <div className="p-3 text-center space-y-1">
+            <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">RECOVERY TIME</span>
+            <div className="text-xl font-bold text-slate-100 font-mono">
               <AnimatedCounter value={isAiApplied ? 16.8 : 25.0} decimals={1} suffix=" min" />
             </div>
-            <span className={`text-[10px] font-bold font-mono px-1.5 py-0.5 rounded ${isAiApplied ? 'bg-emerald-950 text-emerald-400 border border-emerald-800' : 'bg-slate-900 text-slate-400'}`}>
+            <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full inline-block ${isAiApplied ? 'bg-emerald-950/60 text-emerald-400' : 'bg-slate-800/50 text-slate-400'}`}>
               {isAiApplied ? '↓ 32.8% Faster' : 'Baseline'}
             </span>
           </div>
 
-          <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-center space-y-1">
-            <span className="text-[10px] font-mono text-slate-400 uppercase">PAPER SCRAP</span>
-            <div className="text-lg font-bold text-slate-100 font-mono">
+          <div className="p-3 text-center space-y-1">
+            <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">PAPER SCRAP</span>
+            <div className="text-xl font-bold text-slate-100 font-mono">
               <AnimatedCounter value={isAiApplied ? 1.25 : 3.80} decimals={2} suffix=" Tons" />
             </div>
-            <span className={`text-[10px] font-bold font-mono px-1.5 py-0.5 rounded ${isAiApplied ? 'bg-emerald-950 text-emerald-400 border border-emerald-800' : 'bg-slate-900 text-slate-400'}`}>
+            <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full inline-block ${isAiApplied ? 'bg-emerald-950/60 text-emerald-400' : 'bg-slate-800/50 text-slate-400'}`}>
               {isAiApplied ? '↓ 67.1% Saved' : 'Baseline'}
             </span>
           </div>
 
-          <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-center space-y-1">
-            <span className="text-[10px] font-mono text-slate-400 uppercase">TRANSITION COST</span>
-            <div className="text-lg font-bold text-slate-100 font-mono">
+          <div className="p-3 text-center space-y-1">
+            <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">TRANSITION COST</span>
+            <div className="text-xl font-bold text-slate-100 font-mono">
               <AnimatedCounter value={isAiApplied ? 1850 : 5420} decimals={0} prefix="$" />
             </div>
-            <span className={`text-[10px] font-bold font-mono px-1.5 py-0.5 rounded ${isAiApplied ? 'bg-emerald-950 text-emerald-400 border border-emerald-800' : 'bg-slate-900 text-slate-400'}`}>
+            <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full inline-block ${isAiApplied ? 'bg-emerald-950/60 text-emerald-400' : 'bg-slate-800/50 text-slate-400'}`}>
               {isAiApplied ? '↓ $3,570 Saved' : 'Baseline'}
             </span>
           </div>
 
-          <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-center space-y-1">
-            <span className="text-[10px] font-mono text-slate-400 uppercase">ENERGY USAGE</span>
-            <div className="text-lg font-bold text-slate-100 font-mono">
+          <div className="p-3 text-center space-y-1">
+            <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">ENERGY USAGE</span>
+            <div className="text-xl font-bold text-slate-100 font-mono">
               <AnimatedCounter value={isAiApplied ? 420 : 680} decimals={0} suffix=" kWh" />
             </div>
-            <span className={`text-[10px] font-bold font-mono px-1.5 py-0.5 rounded ${isAiApplied ? 'bg-emerald-950 text-emerald-400 border border-emerald-800' : 'bg-slate-900 text-slate-400'}`}>
+            <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full inline-block ${isAiApplied ? 'bg-emerald-950/60 text-emerald-400' : 'bg-slate-800/50 text-slate-400'}`}>
               {isAiApplied ? '↓ 38.2% kWh' : 'Baseline'}
             </span>
           </div>
 
-          <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-center space-y-1">
-            <span className="text-[10px] font-mono text-slate-400 uppercase">QUALITY RISK</span>
-            <div className="text-lg font-bold text-slate-100 font-mono">
+          <div className="p-3 text-center space-y-1">
+            <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">QUALITY RISK</span>
+            <div className="text-xl font-bold text-slate-100 font-mono">
               <AnimatedCounter value={isAiApplied ? 18.5 : 58.4} decimals={1} suffix=" / 100" />
             </div>
-            <span className={`text-[10px] font-bold font-mono px-1.5 py-0.5 rounded ${isAiApplied ? 'bg-emerald-950 text-emerald-400 border border-emerald-800' : 'bg-slate-900 text-slate-400'}`}>
+            <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full inline-block ${isAiApplied ? 'bg-emerald-950/60 text-emerald-400' : 'bg-slate-800/50 text-slate-400'}`}>
               {isAiApplied ? 'LOW RISK' : 'HIGH RISK'}
             </span>
           </div>
 
-          <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 text-center space-y-1">
-            <span className="text-[10px] font-mono text-slate-400 uppercase">CO₂ REDUCTION</span>
-            <div className="text-lg font-bold text-emerald-400 font-mono">
+          <div className="p-3 text-center space-y-1">
+            <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">CO₂ REDUCTION</span>
+            <div className="text-xl font-bold text-emerald-400 font-mono">
               <AnimatedCounter value={isAiApplied ? -0.85 : 0.0} decimals={2} suffix=" Tons" />
             </div>
-            <span className={`text-[10px] font-bold font-mono px-1.5 py-0.5 rounded ${isAiApplied ? 'bg-emerald-950 text-emerald-400 border border-emerald-800' : 'bg-slate-900 text-slate-400'}`}>
-              {isAiApplied ? 'Green Eco Impact' : 'Standard'}
+            <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full inline-block ${isAiApplied ? 'bg-emerald-950/60 text-emerald-400' : 'bg-slate-800/50 text-slate-400'}`}>
+              {isAiApplied ? 'Green Impact' : 'Standard'}
             </span>
           </div>
         </div>
       </GlassCard>
 
-      {/* 3. Live KPIs Grid (6 Items) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
-        {/* KPI 1: Basis Weight */}
-        <GlassCard className="p-4 border-slate-800/90 hover:border-cyan-500/50 transition-all">
-          <div className="flex items-center justify-between text-slate-400 text-xs font-mono">
-            <span>BASIS WEIGHT</span>
-            <Wind className="w-4 h-4 text-cyan-400" />
+      {/* 3. Live KPIs Strip (Single Unified Container — No separate boxes) */}
+      <GlassCard className="p-0 border-slate-800/60 bg-slate-900/60 overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 divide-y sm:divide-y-0 lg:divide-x divide-slate-800/50">
+          {/* KPI 1: Basis Weight */}
+          <div className="p-4 space-y-1">
+            <div className="flex items-center justify-between text-slate-400 text-xs font-mono">
+              <span>BASIS WEIGHT</span>
+              <Wind className="w-3.5 h-3.5 text-cyan-400" />
+            </div>
+            <div className="text-xl font-bold text-slate-100 font-mono">
+              <AnimatedCounter value={currentKPIs.basisWeight} decimals={1} suffix=" g/m²" />
+            </div>
+            <div className="flex items-center justify-between text-[11px] font-mono pt-1">
+              <span className="text-slate-500">Target: {currentKPIs.basisWeightTarget}</span>
+              <span className="text-cyan-400">±0.4%</span>
+            </div>
           </div>
-          <div className="mt-2 text-2xl font-bold text-slate-100 font-mono">
-            <AnimatedCounter value={currentKPIs.basisWeight} decimals={1} suffix=" g/m²" />
-          </div>
-          <div className="mt-1 flex items-center justify-between text-[11px] font-mono">
-            <span className="text-slate-500">Target: {currentKPIs.basisWeightTarget}</span>
-            <span className="text-cyan-400 font-medium">±0.4%</span>
-          </div>
-        </GlassCard>
 
-        {/* KPI 2: Moisture Target */}
-        <GlassCard className="p-4 border-slate-800/90 hover:border-blue-500/50 transition-all">
-          <div className="flex items-center justify-between text-slate-400 text-xs font-mono">
-            <span>SHEET MOISTURE</span>
-            <Droplets className="w-4 h-4 text-blue-400" />
+          {/* KPI 2: Moisture Target */}
+          <div className="p-4 space-y-1">
+            <div className="flex items-center justify-between text-slate-400 text-xs font-mono">
+              <span>SHEET MOISTURE</span>
+              <Droplets className="w-3.5 h-3.5 text-blue-400" />
+            </div>
+            <div className="text-xl font-bold text-slate-100 font-mono">
+              <AnimatedCounter value={currentKPIs.moisture} decimals={1} suffix=" %" />
+            </div>
+            <div className="flex items-center justify-between text-[11px] font-mono pt-1">
+              <span className="text-slate-500">Target: {currentKPIs.moistureTarget}%</span>
+              <span className="text-emerald-400">NOMINAL</span>
+            </div>
           </div>
-          <div className="mt-2 text-2xl font-bold text-slate-100 font-mono">
-            <AnimatedCounter value={currentKPIs.moisture} decimals={1} suffix=" %" />
-          </div>
-          <div className="mt-1 flex items-center justify-between text-[11px] font-mono">
-            <span className="text-slate-500">Target: {currentKPIs.moistureTarget}%</span>
-            <span className="text-emerald-400 font-medium">NOMINAL</span>
-          </div>
-        </GlassCard>
 
-        {/* KPI 3: Machine Speed */}
-        <GlassCard className="p-4 border-slate-800/90 hover:border-emerald-500/50 transition-all">
-          <div className="flex items-center justify-between text-slate-400 text-xs font-mono">
-            <span>WIRE SPEED</span>
-            <Activity className="w-4 h-4 text-emerald-400" />
+          {/* KPI 3: Machine Speed */}
+          <div className="p-4 space-y-1">
+            <div className="flex items-center justify-between text-slate-400 text-xs font-mono">
+              <span>WIRE SPEED</span>
+              <Activity className="w-3.5 h-3.5 text-emerald-400" />
+            </div>
+            <div className="text-xl font-bold text-slate-100 font-mono">
+              <AnimatedCounter value={currentKPIs.machineSpeed} decimals={0} suffix=" m/min" />
+            </div>
+            <div className="flex items-center justify-between text-[11px] font-mono pt-1">
+              <span className="text-slate-500">Target: {currentKPIs.machineSpeedTarget}</span>
+              <span className="text-emerald-400">Ramping</span>
+            </div>
           </div>
-          <div className="mt-2 text-2xl font-bold text-slate-100 font-mono">
-            <AnimatedCounter value={currentKPIs.machineSpeed} decimals={0} suffix=" m/min" />
-          </div>
-          <div className="mt-1 flex items-center justify-between text-[11px] font-mono">
-            <span className="text-slate-500">Target: {currentKPIs.machineSpeedTarget}</span>
-            <span className="text-emerald-400 font-medium">Ramping</span>
-          </div>
-        </GlassCard>
 
-        {/* KPI 4: Steam Pressure */}
-        <GlassCard className="p-4 border-slate-800/90 hover:border-amber-500/50 transition-all">
-          <div className="flex items-center justify-between text-slate-400 text-xs font-mono">
-            <span>DRYER STEAM</span>
-            <Flame className="w-4 h-4 text-amber-400" />
+          {/* KPI 4: Steam Pressure */}
+          <div className="p-4 space-y-1">
+            <div className="flex items-center justify-between text-slate-400 text-xs font-mono">
+              <span>DRYER STEAM</span>
+              <Flame className="w-3.5 h-3.5 text-amber-400" />
+            </div>
+            <div className="text-xl font-bold text-slate-100 font-mono">
+              <AnimatedCounter value={currentKPIs.steamPressure} decimals={2} suffix=" bar" />
+            </div>
+            <div className="flex items-center justify-between text-[11px] font-mono pt-1">
+              <span className="text-slate-500">Target: {currentKPIs.steamPressureTarget}</span>
+              <span className="text-amber-400">+0.3 bar</span>
+            </div>
           </div>
-          <div className="mt-2 text-2xl font-bold text-slate-100 font-mono">
-            <AnimatedCounter value={currentKPIs.steamPressure} decimals={2} suffix=" bar" />
-          </div>
-          <div className="mt-1 flex items-center justify-between text-[11px] font-mono">
-            <span className="text-slate-500">Target: {currentKPIs.steamPressureTarget}</span>
-            <span className="text-amber-400 font-medium">+0.3 bar</span>
-          </div>
-        </GlassCard>
 
-        {/* KPI 5: Stock Flow Rate */}
-        <GlassCard className="p-4 border-slate-800/90 hover:border-purple-500/50 transition-all">
-          <div className="flex items-center justify-between text-slate-400 text-xs font-mono">
-            <span>STOCK FLOW</span>
-            <RefreshCw className="w-4 h-4 text-purple-400" />
+          {/* KPI 5: Stock Flow Rate */}
+          <div className="p-4 space-y-1">
+            <div className="flex items-center justify-between text-slate-400 text-xs font-mono">
+              <span>STOCK FLOW</span>
+              <RefreshCw className="w-3.5 h-3.5 text-purple-400" />
+            </div>
+            <div className="text-xl font-bold text-slate-100 font-mono">
+              <AnimatedCounter value={currentKPIs.stockFlow} decimals={0} suffix=" L/min" />
+            </div>
+            <div className="flex items-center justify-between text-[11px] font-mono pt-1">
+              <span className="text-slate-500">Target: {currentKPIs.stockFlowTarget}</span>
+              <span className="text-purple-400">Flow Sync</span>
+            </div>
           </div>
-          <div className="mt-2 text-2xl font-bold text-slate-100 font-mono">
-            <AnimatedCounter value={currentKPIs.stockFlow} decimals={0} suffix=" L/min" />
-          </div>
-          <div className="mt-1 flex items-center justify-between text-[11px] font-mono">
-            <span className="text-slate-500">Target: {currentKPIs.stockFlowTarget}</span>
-            <span className="text-purple-400 font-medium">Flow Sync</span>
-          </div>
-        </GlassCard>
 
-        {/* KPI 6: Risk Score Gauge */}
-        <GlassCard className="p-4 border-slate-800/90 hover:border-red-500/50 transition-all">
-          <div className="flex items-center justify-between text-slate-400 text-xs font-mono">
-            <span>QUALITY RISK</span>
-            <ShieldAlert
-              className={`w-4 h-4 ${
-                currentKPIs.riskLevel === 'HIGH'
-                  ? 'text-red-500 animate-pulse'
-                  : currentKPIs.riskLevel === 'MEDIUM'
-                  ? 'text-amber-400'
-                  : 'text-emerald-400'
-              }`}
-            />
-          </div>
-          <div
-            className={`mt-2 text-2xl font-bold font-mono ${
-              currentKPIs.riskLevel === 'HIGH'
-                ? 'text-red-400'
-                : currentKPIs.riskLevel === 'MEDIUM'
-                ? 'text-amber-400'
-                : 'text-emerald-400'
-            }`}
-          >
-            <AnimatedCounter value={currentKPIs.riskScore} decimals={1} suffix=" / 100" />
-          </div>
-          <div className="mt-1 flex items-center justify-between text-[11px] font-mono">
-            <span className="text-slate-500">Status:</span>
-            <span
-              className={`font-bold ${
+          {/* KPI 6: Quality Risk */}
+          <div className="p-4 space-y-1">
+            <div className="flex items-center justify-between text-slate-400 text-xs font-mono">
+              <span>QUALITY RISK</span>
+              <ShieldAlert
+                className={`w-3.5 h-3.5 ${
+                  currentKPIs.riskLevel === 'HIGH'
+                    ? 'text-red-400'
+                    : currentKPIs.riskLevel === 'MEDIUM'
+                    ? 'text-amber-400'
+                    : 'text-emerald-400'
+                }`}
+              />
+            </div>
+            <div
+              className={`text-xl font-bold font-mono ${
                 currentKPIs.riskLevel === 'HIGH'
                   ? 'text-red-400'
                   : currentKPIs.riskLevel === 'MEDIUM'
@@ -400,11 +392,25 @@ export const DashboardPage: React.FC = () => {
                   : 'text-emerald-400'
               }`}
             >
-              {currentKPIs.riskLevel}
-            </span>
+              <AnimatedCounter value={currentKPIs.riskScore} decimals={1} suffix=" / 100" />
+            </div>
+            <div className="flex items-center justify-between text-[11px] font-mono pt-1">
+              <span className="text-slate-500">Status:</span>
+              <span
+                className={`font-semibold ${
+                  currentKPIs.riskLevel === 'HIGH'
+                    ? 'text-red-400'
+                    : currentKPIs.riskLevel === 'MEDIUM'
+                    ? 'text-amber-400'
+                    : 'text-emerald-400'
+                }`}
+              >
+                {currentKPIs.riskLevel}
+              </span>
+            </div>
           </div>
-        </GlassCard>
-      </div>
+        </div>
+      </GlassCard>
 
       {/* 4. Interactive Timeline Playback Scrubber */}
       <GlassCard className="bg-slate-900/80 border-slate-800">
