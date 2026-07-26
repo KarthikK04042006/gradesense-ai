@@ -12,7 +12,7 @@ import {
   SimulatorResponse
 } from '../types';
 
-const API_BASE_URL = (((import.meta as any).env?.VITE_API_BASE_URL) || 'http://localhost:8000') + '/api/v1';
+const API_BASE_URL = (((import.meta as any).env?.VITE_API_BASE_URL) || 'https://gradesense-backend-8n9r.onrender.com') + '/api/v1';
 
 async function fetchWithFallback<T>(url: string, options?: RequestInit, fallbackData?: T): Promise<T> {
   try {
